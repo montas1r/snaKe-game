@@ -29,23 +29,33 @@ document.addEventListener("DOMContentLoaded", function () {
         position: getRandomFoodPosition(),
         color: "red",
     };
-    function handleTouchStart(event) {
-        const touchX = event.touches[0].clientX;
-        const touchY = event.touches[0].clientY;
-
-        // Determine the direction based on the touch coordinates
-        const deltaX = touchX - snake.positions[0].x;
-        const deltaY = touchY - snake.positions[0].y;
-
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            // Horizontal swipe
-            snake.direction = deltaX > 0 ? RIGHT : LEFT;
-        } else {
-            // Vertical swipe
-            snake.direction = deltaY > 0 ? DOWN : UP;
+    function handleButtonClick(direction) {
+        switch (direction) {
+            case "up":
+                snake.direction = UP;
+                break;
+            case "down":
+                snake.direction = DOWN;
+                break;
+            case "left":
+                snake.direction = LEFT;
+                break;
+            case "right":
+                snake.direction = RIGHT;
+                break;
         }
     }
-    document.addEventListener("touchstart", handleTouchStart);
+    const btnUp = document.getElementById("btnUp");
+    const btnDown = document.getElementById("btnDown");
+    const btnLeft = document.getElementById("btnLeft");
+    const btnRight = document.getElementById("btnRight");
+
+    btnUp.addEventListener("click", () => handleButtonClick("up"));
+    btnDown.addEventListener("click", () => handleButtonClick("down"));
+    btnLeft.addEventListener("click", () => handleButtonClick("left"));
+    btnRight.addEventListener("click", () => handleButtonClick("right"));
+
+    // document.addEventListener("touchstart", handleTouchStart);
 
     function updateScore() {
         scoreLabel.textContent = `${snake.SCORE}`;
