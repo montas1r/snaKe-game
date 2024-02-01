@@ -16,6 +16,7 @@ body {
     font-size: 35px; /* Adjust the font size as needed */
     z-index: 10;
     max-width: 80%;
+    position: relative;
 }
 
 canvas {
@@ -91,3 +92,48 @@ canvas {
         font-size: 16px;
     }
 }
+
+/* Add styles for mobile buttons */
+button {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #00cc07;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.mobile-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.mobile-buttons button {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #00000000;
+    color: #fff;
+    font-weight: 100;
+    border: 2px;
+    border: #111;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    margin: 0 0px; /* Adjust the spacing between buttons if needed */
+}
+
+#btnUp, #btnDown, #btnLeft, #btnRight {
+    margin: 5px; /* Adjust the spacing between buttons if needed */
+}
+
+button:hover {
+    background-color: #00000049;
+}
+
+.start-overlay {
+    display: none;
+}
+
