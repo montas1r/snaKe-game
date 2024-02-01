@@ -14,11 +14,21 @@
             <button onclick="startGame()">Start</button>
         </div>
     </div>
+    
     <div class="game-container">
         <div class="score-label" id="scoreLabel">0</div>
         <div class="timer-label" id="timerLabel">Time: 0s</div>
         <canvas id="snakeCanvas" width="800" height="600"></canvas>
+
+        <!-- Buttons for mobile movement -->
+        <div class="mobile-buttons">
+            <button id="btnUp">↑</button>
+            <button id="btnDown">↓</button>
+            <button id="btnLeft">←</button>
+            <button id="btnRight">→</button>
+        </div>
     </div>
+
     <script src="snake_game.js"></script>
 </body>
 </html>
