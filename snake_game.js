@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const LEFT = { x: -1, y: 0 };
     const RIGHT = { x: 1, y: 0 };
     const startOverlay = document.getElementById("startOverlay");
+    
+    // Attach event listeners to mobile buttons
+
     startOverlay.style.display = "flex";
 
     let snake = {
@@ -29,33 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         position: getRandomFoodPosition(),
         color: "red",
     };
-    function handleButtonClick(direction) {
-        switch (direction) {
-            case "up":
-                snake.direction = UP;
-                break;
-            case "down":
-                snake.direction = DOWN;
-                break;
-            case "left":
-                snake.direction = LEFT;
-                break;
-            case "right":
-                snake.direction = RIGHT;
-                break;
-        }
-    }
-    const btnUp = document.getElementById("btnUp");
-    const btnDown = document.getElementById("btnDown");
-    const btnLeft = document.getElementById("btnLeft");
-    const btnRight = document.getElementById("btnRight");
-
-    btnUp.addEventListener("click", () => handleButtonClick("up"));
-    btnDown.addEventListener("click", () => handleButtonClick("down"));
-    btnLeft.addEventListener("click", () => handleButtonClick("left"));
-    btnRight.addEventListener("click", () => handleButtonClick("right"));
-
-    // document.addEventListener("touchstart", handleTouchStart);
+    document.addEventListener("touchstart", handleButtonClick);
 
     function updateScore() {
         scoreLabel.textContent = `${snake.SCORE}`;
@@ -233,9 +210,44 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     
+    function handleButtonClick(direction) {
+        switch (direction) {
+            case "up":
+                snake.direction = UP;
+                break;
+            case "down":
+                snake.direction = DOWN;
+                break;
+            case "left":
+                snake.direction = LEFT;
+                break;
+            case "right":
+                snake.direction = RIGHT;
+                break;
+        }
+    }
+
+    function showMobileButtons() {
+        const mobileButtons = document.querySelector('.mobile-buttons');
+        mobileButtons.style.display = 'flex';
+    }
+    
+    // Attach event listeners to mobile buttons
+    const btnUp = document.getElementById("btnUp");
+    const btnDown = document.getElementById("btnDown");
+    const btnLeft = document.getElementById("btnLeft");
+    const btnRight = document.getElementById("btnRight");
+
+    btnUp.addEventListener("click", () => handleButtonClick("up"));
+    btnDown.addEventListener("click", () => handleButtonClick("down"));
+    btnLeft.addEventListener("click", () => handleButtonClick("left"));
+    btnRight.addEventListener("click", () => handleButtonClick("right"));
+    
+    
     window.startGame = function () {
         startOverlay.style.display = "none";
         startTimer();
         setInterval(mainLoop, 1000 / FPS);
+        showMobileButtons();
     }
 });
