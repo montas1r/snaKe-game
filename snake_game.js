@@ -25,11 +25,27 @@ document.addEventListener("DOMContentLoaded", function () {
     let timer = 0;
     let timerInterval;
     let FPS = 10;
-
     let food = {
         position: getRandomFoodPosition(),
         color: "red",
     };
+    function handleTouchStart(event) {
+        const touchX = event.touches[0].clientX;
+        const touchY = event.touches[0].clientY;
+
+        // Determine the direction based on the touch coordinates
+        const deltaX = touchX - snake.positions[0].x;
+        const deltaY = touchY - snake.positions[0].y;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            // Horizontal swipe
+            snake.direction = deltaX > 0 ? RIGHT : LEFT;
+        } else {
+            // Vertical swipe
+            snake.direction = deltaY > 0 ? DOWN : UP;
+        }
+    }
+    document.addEventListener("touchstart", handleTouchStart);
 
     function updateScore() {
         scoreLabel.textContent = `${snake.SCORE}`;
