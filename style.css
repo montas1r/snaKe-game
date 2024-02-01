@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #111;
+    color: #fff;
+    font-family: "Arial", "Helvetica", sans-serif; /* Font fallbacks */
+    position: relative;
+}
+
+.game-container {
+    background-color: rgb(17, 17, 17);
+    font-size: 35px; /* Adjust the font size as needed */
+    z-index: 10;
+}
+
+canvas {
+    border: 10px solid #fff; /* Adjust border color for visibility */
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0;
+}
+/* Enhance styles for the start overlay */
+.start-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent overlay */
+    z-index: 100;
+}
+
+.start-modal {
+    background-color: none;
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Box shadow for a lifted effect */
+    max-width: 600px;
+    width: 80%;
+    color: #ffffff;
+}
+
+.start-modal h2 {
+    font-size: 44px;
+    margin-bottom: 20px;
+}
+
+.start-modal p {
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.start-modal button {
+    padding: 25px 65px;
+    font-size: 28px;
+    background-color: #00cc07;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.start-modal button:hover {
+    background-color: #315f3300;
+    transition: 0.2s;
+}
+
+/* Hide the start overlay by default */
+.start-overlay {
+    display: none;
+}
