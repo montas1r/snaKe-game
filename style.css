@@ -7,36 +7,36 @@ body {
     height: 100vh;
     background-color: #111;
     color: #fff;
-    font-family: "Arial", "Helvetica", sans-serif; /* Font fallbacks */
+    font-family: "Arial", "Helvetica", sans-serif;
     position: relative;
 }
 
 .game-container {
     background-color: rgb(17, 17, 17);
-    font-size: 35px; /* Adjust the font size as needed */
+    font-size: 35px;
     z-index: 10;
     max-width: 80%;
     position: relative;
 }
 
 canvas {
-    border: 10px solid #fff; /* Adjust border color for visibility */
+    border: 10px solid #fff;
     box-sizing: border-box;
     position: relative;
     z-index: 0;
     max-width: 100%;
 }
-/* Enhance styles for the start overlay */
+
 .start-overlay {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 100;
 }
 
@@ -45,7 +45,7 @@ canvas {
     padding: 50px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Box shadow for a lifted effect */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     max-width: 600px;
     width: 80%;
     color: #ffffff;
@@ -62,29 +62,28 @@ canvas {
 }
 
 .start-modal button {
-    padding: 25px 65px;
-    font-size: 28px;
-    background-color: #00cc07;
+    width: 80px; /* Set the width of the button */
+    height: 80px; /* Set the height of the button */
+    font-size: 36px; /* Adjust the font size for the symbol */
+    padding: 20px; /* Adjust the padding for spacing */
+    background-color: #00000000;
     color: #fff;
     border: none;
-    border-radius: 20px;
+    border-radius: 200px; /* Adjust border-radius for rounded corners if needed */
     cursor: pointer;
     transition: background-color 0.5s;
+    outline: 2px solid #fff; /* Add outline with white color */
 }
 
 .start-modal button:hover {
-    background-color: #315f3300;
+    background-color: rgb(0, 0, 0);
     transition: 0.2s;
 }
 
-/* Hide the start overlay by default */
-.start-overlay {
-    display: none;
-}
 
-.score-label,
-.timer-label {
-    font-size: 16px; /* Adjust font size for labels */
+.score-label, .timer-label {
+    font-size: 26px;
+    position: static;
 }
 
 @media only screen and (max-width: 600px) {
@@ -93,47 +92,42 @@ canvas {
     }
 }
 
-/* Add styles for mobile buttons */
-button {
-    font-size: 24px;
-    padding: 10px 20px;
-    background-color: #00cc07;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.5s;
-}
 .mobile-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Adjust the margin as needed */
+    margin-top: 10px;
 }
 
 .mobile-buttons button {
+    width: 60px; /* Set the width of the button */
+    height: 60px; /* Set the height of the button */
     font-size: 24px;
-    padding: 10px 20px;
     background-color: #00000000;
     color: #fff;
-    font-weight: 100;
-    border: 2px;
-    border: #111;
+    border: 2px solid #111; /* Combine border properties */
     border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.5s;
-    margin: 0 0px; /* Adjust the spacing between buttons if needed */
 }
 
+
 #btnUp, #btnDown, #btnLeft, #btnRight {
-    margin: 5px; /* Adjust the spacing between buttons if needed */
+    margin: 12px;
 }
 
 button:hover {
     background-color: #00000049;
 }
 
-.start-overlay {
-    display: none;
+#stext {
+    font-size: small;
 }
 
+#credit {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: smaller;
+}
