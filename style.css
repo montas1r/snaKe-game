@@ -132,10 +132,3 @@ button:hover {
     font-size: smaller;
 }
 
-#cam {
-    
-    display:flex ;
-    height: 400px;
-    width: auto;
-    padding: 19px;    
-}
