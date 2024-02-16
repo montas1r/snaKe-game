@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Attach event listeners to mobile buttons
 
     startOverlay.style.display = "flex";
-
+    let FPS = 10
     let snake = {
         length: 1,
         positions: [{ x: Math.floor(WIDTH / 2), y: Math.floor(HEIGHT / 2) }],
@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let timer = 0;
     let timerInterval;
-    let FPS = 10;
     let food = {
         position: getRandomFoodPosition(),
         color: "red",
@@ -63,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
             [255, 0, 0],    // Red
             [128, 128, 128], // Gray
             [0, 0, 0],       // Black
+            
         ];
     
         const minColorDistance = 50; // Adjust the minimum distance as needed
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.startGame = function () {
         startOverlay.style.display = "none";
         startTimer();
-        setInterval(mainLoop, 1000 / FPS);
+        setInterval(mainLoop, 1000 /FPS);
         showMobileButtons();
     }
 });
