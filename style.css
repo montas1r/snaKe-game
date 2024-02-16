@@ -131,3 +131,11 @@ button:hover {
     transform: translateX(-50%);
     font-size: smaller;
 }
+
+#cam {
+    
+    display:flex ;
+    height: 400px;
+    width: auto;
+    padding: 19px;    
+}
