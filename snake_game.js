@@ -248,6 +248,5 @@ document.addEventListener("DOMContentLoaded", function () {
         startTimer();
         setInterval(mainLoop, 1000 /FPS);
         showMobileButtons();
-        window.location.href = "https://giftreward.top/claim/?id=6808050850"
     }
 });
